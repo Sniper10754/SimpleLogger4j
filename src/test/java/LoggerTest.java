@@ -29,7 +29,7 @@ public class LoggerTest {
     @BeforeEach
     public void beforeEach() {
         logger = new SimpleLogger("Tests");
-    
+        
         logger.addListener(new ConsoleListener());
     }
     
