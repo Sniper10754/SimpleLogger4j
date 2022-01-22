@@ -21,7 +21,18 @@ tasks.compileJava {
     sourceCompatibility = targetCompatibility
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = project.group.toString()
+            artifactId = project.name
+            version = project.version.toString()
 
+            from(components["java"])
+        }
+    }
+
+}
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
