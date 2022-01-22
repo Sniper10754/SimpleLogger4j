@@ -1,5 +1,6 @@
 plugins {
     java
+    `maven-publish`
 }
 
 group = "me.sniper10754"
@@ -19,6 +20,8 @@ tasks.compileJava {
     targetCompatibility = JavaVersion.VERSION_1_8.toString()
     sourceCompatibility = targetCompatibility
 }
+
+
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
