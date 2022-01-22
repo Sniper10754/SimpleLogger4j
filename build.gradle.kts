@@ -2,8 +2,8 @@ plugins {
     java
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = "me.sniper10754"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -16,7 +16,7 @@ dependencies {
 }
 
 tasks.compileJava {
-    targetCompatibility = JavaVersion.VERSION_11.toString()
+    targetCompatibility = JavaVersion.VERSION_1_8.toString()
     sourceCompatibility = targetCompatibility
 }
 
