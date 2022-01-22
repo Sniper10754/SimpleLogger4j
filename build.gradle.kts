@@ -14,7 +14,6 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
-    implementation("com.github.mjg123:ngrok4j:main-SNAPSHOT")
 }
 
 tasks.compileJava {
