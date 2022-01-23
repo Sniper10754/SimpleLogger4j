@@ -1,4 +1,6 @@
-# SimpleLogger4j
+# SimpleLogger4j [![](https://jitpack.io/v/Sniper10754/SimpleLogger4j.svg)](https://jitpack.io/#Sniper10754/SimpleLogger4j)
+
+A Simple logger for java
 
 #### Use
 
