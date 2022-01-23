@@ -120,5 +120,5 @@ public interface Logger {
      * @param o the o
      * @return the boolean
      */
-    boolean removeListener(Object o);
+    boolean removeListener(EventListener o);
 }

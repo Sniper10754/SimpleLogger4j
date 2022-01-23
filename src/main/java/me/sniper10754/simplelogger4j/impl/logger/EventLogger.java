@@ -34,7 +34,7 @@ public abstract class EventLogger extends AbstractLogger {
      * @param o the o
      * @return the boolean
      */
-    public boolean removeListener(Object o) {return listeners.remove(o);}
+    public boolean removeListener(EventListener o) {return listeners.remove(o);}
     
     /**
      * Gets listeners.
