@@ -106,4 +106,19 @@ public interface Logger {
      * @return the logger name
      */
     String getLoggerName();
+    
+    /**
+     * Add a event listener.
+     *
+     * @param listener the listener
+     */
+    void addListener(EventListener listener);
+    
+    /**
+     * Remove a event listener.
+     *
+     * @param o the o
+     * @return the boolean
+     */
+    boolean removeListener(Object o);
 }
