@@ -101,6 +101,13 @@ public interface Logger {
     Formatter getFormatter();
     
     /**
+     * Sets formatter.
+     *
+     * @param formatter the formatter
+     */
+    void setFormatter(Formatter formatter);
+    
+    /**
      * Gets logger name.
      *
      * @return the logger name
@@ -117,8 +124,8 @@ public interface Logger {
     /**
      * Remove a event listener.
      *
-     * @param o the o
+     * @param listener the listener
      * @return the boolean
      */
-    boolean removeListener(EventListener o);
+    boolean removeListener(EventListener listener);
 }
