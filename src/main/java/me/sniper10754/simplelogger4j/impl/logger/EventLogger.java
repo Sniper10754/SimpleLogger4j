@@ -12,7 +12,7 @@ import java.util.List;
  * Adapts {@link AbstractLogger} for using {@link EventListener}.
  */
 public abstract class EventLogger extends AbstractLogger {
-    private List<EventListener> listeners;
+    private final List<EventListener> listeners;
     
     /**
      * Instantiates a new Abstract logger.
