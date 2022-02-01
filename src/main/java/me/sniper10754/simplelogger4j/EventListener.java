@@ -13,5 +13,5 @@ public interface EventListener {
      *
      * @param event the event
      */
-     void onLogEvent(LogEvent event);
+     void log(LogEvent event);
 }
