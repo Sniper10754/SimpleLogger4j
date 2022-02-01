@@ -1,4 +1,4 @@
-package me.sniper10754.simplelogger4j.impl.logger;
+package me.sniper10754.simplelogger4j.logger;
 
 import me.sniper10754.simplelogger4j.event.LogEvent;
 
@@ -49,6 +49,6 @@ public class SimpleLogger extends EventLogger {
     
     @Override
     public void log(LogEvent event) {
-        getListeners().forEach(listener -> listener.onLogEvent(event));
+        getListeners().forEach(listener -> listener.log(event));
     }
 }

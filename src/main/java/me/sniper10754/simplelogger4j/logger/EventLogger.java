@@ -1,4 +1,4 @@
-package me.sniper10754.simplelogger4j.impl.logger;
+package me.sniper10754.simplelogger4j.logger;
 
 import me.sniper10754.simplelogger4j.EventListener;
 

@@ -1,4 +1,4 @@
-package me.sniper10754.simplelogger4j.impl.listeners;
+package me.sniper10754.simplelogger4j.listeners;
 
 import me.sniper10754.simplelogger4j.event.LogEvent;
 import me.sniper10754.simplelogger4j.EventListener;
@@ -24,7 +24,7 @@ public class StreamListener implements EventListener {
     }
     
     @Override
-    public void onLogEvent(LogEvent event) {
+    public void log(LogEvent event) {
         stream.println(event.toString());
     }
 }

@@ -1,4 +1,4 @@
-package me.sniper10754.simplelogger4j.impl.formatter;
+package me.sniper10754.simplelogger4j.formatter;
 
 import me.sniper10754.simplelogger4j.Formatter;
 import me.sniper10754.simplelogger4j.event.LogEvent;

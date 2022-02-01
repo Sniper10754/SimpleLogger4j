@@ -1,4 +1,6 @@
-package me.sniper10754.simplelogger4j.impl.listeners;
+package me.sniper10754.simplelogger4j.listeners;
+
+import me.sniper10754.simplelogger4j.event.LogEvent;
 
 /**
  * The type Console listener.
@@ -11,5 +13,10 @@ public class ConsoleListener extends StreamListener {
      */
     public ConsoleListener() {
         super(System.out);
+    }
+    
+    @Override
+    public void log(LogEvent event) {
+        super.log(event);
     }
 }
