@@ -1,69 +1,70 @@
-package me.sniper10754.simplelogger4j.logger.adapters;
+package me.sniper10754.simplelogger4j.utils;
 
 /**
  * The type Print adapter.
  */
-public interface PrintAdapter {
+public interface Printer {
+    
     /**
      * Print.
      *
      * @param o the o
      */
-     void print(Object o);
+    void print(Object o);
     
     /**
      * Print.
      *
      * @param s the s
      */
-     void print(String s);
+    void print(String s);
     
     /**
      * Print.
      *
      * @param x the x
      */
-     void print(boolean x);
+    void print(boolean x);
     
     /**
      * Print.
      *
      * @param x the x
      */
-     void print(char x);
+    void print(char x);
     
     /**
      * Print.
      *
      * @param x the x
      */
-     void print(int x);
+    void print(int x);
     
     /**
      * Print.
      *
      * @param x the x
      */
-     void print(long x);
+    void print(long x);
     
     /**
      * Print.
      *
      * @param x the x
      */
-     void print(float x);
+    void print(float x);
     
     /**
      * Print.
      *
      * @param x the x
      */
-     void print(double x);
+    void print(double x);
     
     /**
      * Print.
      *
      * @param x the x
      */
-     void print(char[] x);
+    void print(char[] x);
 }

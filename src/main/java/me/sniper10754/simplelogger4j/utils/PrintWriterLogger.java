@@ -1,24 +1,25 @@
-package me.sniper10754.simplelogger4j.logger.adapters;
+package me.sniper10754.simplelogger4j.utils;
 
+import me.sniper10754.simplelogger4j.Level;
 import me.sniper10754.simplelogger4j.Logger;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 
 /**
  * The type Print writer adapter.
  */
-public class PrintWriterAdapter extends PrintWriter
-        implements PrintAdapter {
+public class PrintWriterLogger extends PrintWriter
+        implements Printer {
     private Logger logger;
+    private Level logLevel = Level.INFO;
     
     /**
      * Instantiates a new Print writer adapter.
      *
      * @param logger the logger
      */
-    public PrintWriterAdapter(Logger logger) {
+    public PrintWriterLogger(Logger logger) {
         super(new Writer() {
             @Override
             public void write(int b) {}
@@ -33,6 +34,27 @@ public class PrintWriterAdapter extends PrintWriter
             public void close() {}
         });
         this.logger = logger;
+    }
+    
+    public Level logLevel() {
+        return logLevel;
+    }
+    
+    public void setLogLevel(Level logLevel) {
+        this.logLevel = logLevel;
+    }
+    
+    private void log(String s) {
+        logger.log(logLevel, s);
+    }
+    
+    /**
+     * Logger logger.
+     *
+     * @return the logger
+     */
+    public Logger getLogger() {
+        return logger;
     }
     
     /**
