@@ -103,38 +103,6 @@ public abstract class AbstractLogger implements Logger {
         log(Level.ALL, message);
     }
     
-    public void info(String message, boolean newline) {
-        log(Level.INFO, message + (newline ? '\n' : ' '));
-    }
-    
-    public void warning(String message, boolean newline) {
-        log(Level.WARNING, message + (newline ? '\n' : ' '));
-    }
-    
-    public void severe(String message, boolean newline) {
-        log(Level.SEVERE, message + (newline ? '\n' : ' '));
-    }
-    
-    public void config(String message, boolean newline) {
-        log(Level.CONFIG, message + (newline ? '\n' : ' '));
-    }
-    
-    public void fine(String message, boolean newline) {
-        log(Level.FINE, message + (newline ? '\n' : ' '));
-    }
-    
-    public void finer(String message, boolean newline) {
-        log(Level.FINER, message + (newline ? '\n' : ' '));
-    }
-    
-    public void finest(String message, boolean newline) {
-        log(Level.FINEST, message + (newline ? '\n' : ' '));
-    }
-    
-    public void all(String message, boolean newline) {
-        log(Level.ALL, message + (newline ? '\n' : ' '));
-    }
-    
     @Override
     public String getLoggerName() {
         return getClass().getSimpleName();

@@ -13,85 +13,197 @@ public interface Logger {
      */
     void log(LogEvent event);
     
+    
     /**
      * Log.
      *
      * @param level   the level
      * @param message the message
      */
-    void log(Level level, String message);
+    default void log(Level level, String message) {
+        log(new LogEvent(message, level, null, this));
+    }
+    
     
     /**
      * Thrown.
      *
      * @param e the e
      */
-    void thrown(Throwable e);
+    default void thrown(Throwable e) {
+        thrown("Exception/Error occurred", e);
+    }
     
     
     /**
      * Thrown.
      *
      * @param prefix the prefix
-     * @param e      the throwable
+     * @param e      the e
      */
-    void thrown(String prefix, Throwable e);
+    default void thrown(String prefix, Throwable e) {
+        log(new LogEvent(prefix, Level.SEVERE, e, this));
+    }
+    
     
     /**
      * Info.
      *
      * @param message the message
      */
-    void info(String message);
+    default void info(String message) {
+        info(message, true);
+    }
+    
     
     /**
      * Warning.
      *
      * @param message the message
      */
-    void warning(String message);
+    default void warning(String message) {
+        warning(message, true);
+    }
+    
     
     /**
      * Severe.
      *
      * @param message the message
      */
-    void severe(String message);
+    default void severe(String message) {
+        severe(message, true);
+    }
+    
     
     /**
      * Config.
      *
      * @param message the message
      */
-    void config(String message);
+    default void config(String message) {
+        config(message, true);
+    }
+    
     
     /**
      * Fine.
      *
      * @param message the message
      */
-    void fine(String message);
+    default void fine(String message) {
+        fine(message, true);
+    }
+    
     
     /**
      * Finer.
      *
      * @param message the message
      */
-    void finer(String message);
+    default void finer(String message) {
+        finer(message, true);
+    }
+    
     
     /**
      * Finest.
      *
      * @param message the message
      */
-    void finest(String message);
+    default void finest(String message) {
+        finest(message, true);
+    }
+    
     
     /**
      * All.
      *
      * @param message the message
      */
-    void all(String message);
+    default void all(String message) {
+        all(message, true);
+    }
+    
+    /**
+     * Info.
+     *
+     * @param message the message
+     * @param newline the newline
+     */
+    default void info(String message, boolean newline) {
+        log(Level.INFO, message + (newline ? '\n' : ' '));
+    }
+    
+    /**
+     * Warning.
+     *
+     * @param message the message
+     * @param newline the newline
+     */
+    default void warning(String message, boolean newline) {
+        log(Level.WARNING, message + (newline ? '\n' : ' '));
+    }
+    
+    /**
+     * Severe.
+     *
+     * @param message the message
+     * @param newline the newline
+     */
+    default void severe(String message, boolean newline) {
+        log(Level.SEVERE, message + (newline ? '\n' : ' '));
+    }
+    
+    /**
+     * Config.
+     *
+     * @param message the message
+     * @param newline the newline
+     */
+    default void config(String message, boolean newline) {
+        log(Level.CONFIG, message + (newline ? '\n' : ' '));
+    }
+    
+    /**
+     * Fine.
+     *
+     * @param message the message
+     * @param newline the newline
+     */
+    default void fine(String message, boolean newline) {
+        log(Level.FINE, message + (newline ? '\n' : ' '));
+    }
+    
+    /**
+     * Finer.
+     *
+     * @param message the message
+     * @param newline the newline
+     */
+    default void finer(String message, boolean newline) {
+        log(Level.FINER, message + (newline ? '\n' : ' '));
+    }
+    
+    /**
+     * Finest.
+     *
+     * @param message the message
+     * @param newline the newline
+     */
+    default void finest(String message, boolean newline) {
+        log(Level.FINEST, message + (newline ? '\n' : ' '));
+    }
+    
+    /**
+     * All.
+     *
+     * @param message the message
+     * @param newline the newline
+     */
+    default void all(String message, boolean newline) {
+        log(Level.ALL, message + (newline ? '\n' : ' '));
+    }
     
     /**
      * Gets formatter.
