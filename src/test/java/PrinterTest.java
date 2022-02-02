@@ -1,4 +1,3 @@
-import me.sniper10754.simplelogger4j.Printer;
 import me.sniper10754.simplelogger4j.utils.PrintStreamLogger;
 import me.sniper10754.simplelogger4j.utils.PrintWriterLogger;
 import org.junit.jupiter.api.Test;
