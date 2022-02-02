@@ -49,11 +49,6 @@ public abstract class AbstractLogger implements Logger {
     }
     
     @Override
-    public void log(Level level, String message) {
-        log(new LogEvent(message, level, null, this));
-    }
-    
-    @Override
     public void thrown(Throwable e) {
         thrown("Exception/Error occurred", e);
     }
@@ -61,46 +56,6 @@ public abstract class AbstractLogger implements Logger {
     @Override
     public void thrown(String prefix, Throwable e) {
         log(new LogEvent(prefix, Level.SEVERE, e, this));
-    }
-    
-    @Override
-    public void info(String message) {
-        log(Level.INFO, message);
-    }
-    
-    @Override
-    public void warning(String message) {
-        log(Level.WARNING, message);
-    }
-    
-    @Override
-    public void severe(String message) {
-        log(Level.SEVERE, message);
-    }
-    
-    @Override
-    public void config(String message) {
-        log(Level.CONFIG, message);
-    }
-    
-    @Override
-    public void fine(String message) {
-        log(Level.FINE, message);
-    }
-    
-    @Override
-    public void finer(String message) {
-        log(Level.FINER, message);
-    }
-    
-    @Override
-    public void finest(String message) {
-        log(Level.FINEST, message);
-    }
-    
-    @Override
-    public void all(String message) {
-        log(Level.ALL, message);
     }
     
     @Override

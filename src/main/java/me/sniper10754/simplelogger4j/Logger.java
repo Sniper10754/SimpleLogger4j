@@ -205,6 +205,10 @@ public interface Logger {
         log(Level.ALL, message + (newline ? '\n' : ' '));
     }
     
+    default void log(Level level, String message, boolean newline) {
+        log(new LogEvent(message + (newline ? '\n' : ' '), level, null, this));
+    }
+    
     /**
      * Gets formatter.
      *

@@ -10,9 +10,9 @@ public class PrinterTest extends AbstractTest {
         PrintStreamLogger loggerStream = new PrintStreamLogger(logger);
         
         loggerStream.setLogLevel(Level.INFO);
-        
-        loggerStream.print("Test!");
+    
         loggerStream.println("Test 2!");
+        loggerStream.print("Test!");
     }
     
     @Test
@@ -20,8 +20,8 @@ public class PrinterTest extends AbstractTest {
         PrintWriterLogger writerStream = new PrintWriterLogger(logger);
         
         writerStream.setLogLevel(Level.INFO);
-        
-        writerStream.print("Test!");
+    
         writerStream.println("Test 2!");
+        writerStream.print("Test!");
     }
 }

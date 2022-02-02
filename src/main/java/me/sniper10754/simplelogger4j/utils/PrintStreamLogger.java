@@ -69,52 +69,97 @@ public class PrintStreamLogger extends PrintStream
      *
      * @param s the s
      */
-    private void log(String s) {
-        logger.log(logLevel, s);
+    private void log(String s, boolean newline) {
+        logger.log(logLevel, s + (newline ? '\n' : ' '));
     }
     
     @Override
     public void print(Object o) {
-        log(String.valueOf(o));
+        log(String.valueOf(o), false);
     }
     
     @Override
     public void print(String s) {
-        log(s);
+        log(s, false);
     }
     
     @Override
     public void print(boolean x) {
-        log(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(char x) {
-        log(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(int x) {
-        log(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(long x) {
-        log(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(float x) {
-        log(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(double x) {
-        log(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(char[] x) {
-        log(String.valueOf(x));
+        log(String.valueOf(x), false);
+    }
+    
+    @Override
+    public void println(boolean x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(char x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(int x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(long x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(float x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(double x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(char[] x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(String x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(Object x) {
+        log(String.valueOf(x), true);
     }
 }

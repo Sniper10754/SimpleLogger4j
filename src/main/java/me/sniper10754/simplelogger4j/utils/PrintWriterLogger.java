@@ -37,88 +37,113 @@ public class PrintWriterLogger extends PrintWriter
         this.logger = logger;
     }
     
-    /**
-     * Gets log level.
-     *
-     * @return the log level
-     */
-    public Level getLogLevel() {
-        return logLevel;
-    }
-    
-    /**
-     * Sets log level.
-     *
-     * @param logLevel the log level
-     */
-    public void setLogLevel(Level logLevel) {
-        this.logLevel = logLevel;
-    }
-    
-    private void log(String s) {
-        logger.log(logLevel, s);
-    }
-    
-    /**
-     * Logger logger.
-     *
-     * @return the logger
-     */
-    public Logger getLogger() {
+    public Logger logger() {
         return logger;
     }
     
-    /**
-     * Sets logger.
-     *
-     * @param logger the logger
-     */
     public void setLogger(Logger logger) {
         this.logger = logger;
     }
     
+    public Level logLevel() {
+        return logLevel;
+    }
+    
+    public void setLogLevel(Level logLevel) {
+        this.logLevel = logLevel;
+    }
+    
+    private void log(String s, boolean newline) {
+        logger.log(logLevel, s + (newline ? '\n' : ' '));
+    }
+    
     @Override
     public void print(Object o) {
-        logger.info(String.valueOf(o));
+        log(String.valueOf(o), false);
     }
     
     @Override
     public void print(String s) {
-        logger.info(s);
+        log(s, false);
     }
     
     @Override
     public void print(boolean x) {
-        logger.info(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(char x) {
-        logger.info(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(int x) {
-        logger.info(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(long x) {
-        logger.info(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(float x) {
-        logger.info(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(double x) {
-        logger.info(String.valueOf(x));
+        log(String.valueOf(x), false);
     }
     
     @Override
     public void print(char[] x) {
-        logger.info(String.valueOf(x));
+        log(String.valueOf(x), false);
+    }
+    
+    @Override
+    public void println(boolean x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(char x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(int x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(long x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(float x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(double x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(char[] x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(String x) {
+        log(String.valueOf(x), true);
+    }
+    
+    @Override
+    public void println(Object x) {
+        log(String.valueOf(x), true);
     }
 }
