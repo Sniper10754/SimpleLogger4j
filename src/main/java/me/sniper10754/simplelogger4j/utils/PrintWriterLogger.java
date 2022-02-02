@@ -37,10 +37,20 @@ public class PrintWriterLogger extends PrintWriter
         this.logger = logger;
     }
     
-    public Level logLevel() {
+    /**
+     * Gets log level.
+     *
+     * @return the log level
+     */
+    public Level getLogLevel() {
         return logLevel;
     }
     
+    /**
+     * Sets log level.
+     *
+     * @param logLevel the log level
+     */
     public void setLogLevel(Level logLevel) {
         this.logLevel = logLevel;
     }

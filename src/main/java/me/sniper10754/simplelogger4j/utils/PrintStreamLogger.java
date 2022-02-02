@@ -46,15 +46,11 @@ public class PrintStreamLogger extends PrintStream
         this.logger = logger;
     }
     
-    public Logger logger() {
-        return logger;
-    }
-    
-    public Level logLevel() {
+    public Level getLogLevel() {
         return logLevel;
     }
     
-    private void setLogLevel(Level logLevel) {
+    public void setLogLevel(Level logLevel) {
         this.logLevel = logLevel;
     }
     
