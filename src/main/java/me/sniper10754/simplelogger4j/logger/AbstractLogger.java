@@ -2,9 +2,9 @@ package me.sniper10754.simplelogger4j.logger;
 
 import me.sniper10754.simplelogger4j.Formatter;
 import me.sniper10754.simplelogger4j.Level;
+import me.sniper10754.simplelogger4j.Logger;
 import me.sniper10754.simplelogger4j.event.LogEvent;
 import me.sniper10754.simplelogger4j.formatter.ClassicFormatter;
-import me.sniper10754.simplelogger4j.Logger;
 
 /**
  * The type Abstract logger.

@@ -10,8 +10,7 @@ import java.io.Writer;
 /**
  * The type Print writer adapter.
  */
-public class PrintWriterLogger extends PrintWriter
-        implements Printer {
+public class PrintWriterLogger extends PrintWriter implements Printer {
     private Logger logger;
     private Level logLevel = Level.INFO;
     

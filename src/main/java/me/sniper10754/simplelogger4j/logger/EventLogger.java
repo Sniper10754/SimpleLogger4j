@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * The type Event logger.
- *
+ * <p>
  * Adapts {@link AbstractLogger} for using {@link EventListener}.
  */
 public abstract class EventLogger extends AbstractLogger {

@@ -4,7 +4,7 @@ import me.sniper10754.simplelogger4j.event.LogEvent;
 
 /**
  * The type Simple logger.
- *
+ * <p>
  * A simple implementation for {@link EventLogger}
  */
 public class SimpleLogger extends EventLogger {

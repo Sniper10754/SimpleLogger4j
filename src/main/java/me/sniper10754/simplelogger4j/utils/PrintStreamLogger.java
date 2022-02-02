@@ -10,8 +10,7 @@ import java.io.PrintStream;
 /**
  * The type Print stream adapter.
  */
-public class PrintStreamLogger extends PrintStream
-        implements Printer {
+public class PrintStreamLogger extends PrintStream implements Printer {
     private Logger logger;
     private Level logLevel = Level.INFO;
     
@@ -23,7 +22,7 @@ public class PrintStreamLogger extends PrintStream
     public PrintStreamLogger(Logger logger) {
         super(new OutputStream() {
             @Override
-            public void write(int b) { }
+            public void write(int b) {}
         });
         this.logger = logger;
     }

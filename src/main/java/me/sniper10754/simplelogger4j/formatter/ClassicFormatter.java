@@ -18,11 +18,7 @@ public class ClassicFormatter implements Formatter {
     public String format(LogEvent event) {
         StringBuilder buffer = new StringBuilder();
         
-        buffer.append("[")
-                .append(event.getLogger().getLoggerName())
-                .append("/")
-                .append(event.getLevel())
-                .append("]");
+        buffer.append("[").append(event.getLogger().getLoggerName()).append("/").append(event.getLevel()).append("]");
         
         buffer.append(" ");
         
@@ -36,12 +32,10 @@ public class ClassicFormatter implements Formatter {
             StringWriter sw = new StringWriter();
             e.printStackTrace(new PrintWriter(sw));
             String exceptionAsString = sw.toString();
-    
-            if (message != null)
-                if (!message.isEmpty())
-                    buffer.append(": ");
             
-    
+            if (message != null) if (! message.isEmpty()) buffer.append(": ");
+            
+            
             buffer.append(exceptionAsString);
         }
         
