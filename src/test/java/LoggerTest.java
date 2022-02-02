@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Scanner;
+
 public class LoggerTest extends AbstractTest {
 
     @Test
@@ -29,5 +31,14 @@ public class LoggerTest extends AbstractTest {
         } catch (ArithmeticException e) {
             logger.thrown("Oh no", e);
         }
+    }
+    
+    @Test
+    void readPromptCorrectly() {
+        logger.info("Select Something: ");
+    
+        Scanner scanner = new Scanner(System.in);
+        
+        scanner.nextLine();
     }
 }

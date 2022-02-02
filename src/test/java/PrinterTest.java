@@ -7,7 +7,7 @@ public class PrinterTest extends AbstractTest {
     
     @Test
     void loggerPrintStreamTest() {
-        Printer loggerStream = new PrintStreamLogger(logger);
+        PrintStreamLogger loggerStream = new PrintStreamLogger(logger);
         
         loggerStream.print("Test!");
         loggerStream.println("Test 2!");
@@ -15,7 +15,7 @@ public class PrinterTest extends AbstractTest {
     
     @Test
     void loggerPrintWriterTest() {
-        Printer writerStream = new PrintWriterLogger(logger);
+        PrintWriterLogger writerStream = new PrintWriterLogger(logger);
         
         writerStream.print("Test!");
         writerStream.println("Test 2!");
