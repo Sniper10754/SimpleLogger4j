@@ -69,15 +69,6 @@ public class PrintWriterLogger extends PrintWriter
     }
     
     /**
-     * Logger logger.
-     *
-     * @return the logger
-     */
-    public Logger logger() {
-        return logger;
-    }
-    
-    /**
      * Sets logger.
      *
      * @param logger the logger

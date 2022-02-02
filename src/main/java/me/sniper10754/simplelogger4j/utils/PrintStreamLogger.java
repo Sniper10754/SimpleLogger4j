@@ -69,7 +69,7 @@ public class PrintStreamLogger extends PrintStream
      *
      * @param s the s
      */
-    public void log(String s) {
+    private void log(String s) {
         logger.log(logLevel, s);
     }
     
