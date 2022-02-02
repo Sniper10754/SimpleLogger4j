@@ -1,3 +1,5 @@
+package me.sniper10754.simplelogger4j.tests;
+
 import me.sniper10754.simplelogger4j.Level;
 import me.sniper10754.simplelogger4j.utils.PrintStreamLogger;
 import me.sniper10754.simplelogger4j.utils.PrintWriterLogger;
@@ -13,15 +15,17 @@ public class PrinterTest extends AbstractTest {
     
         loggerStream.println("Test 2!");
         loggerStream.print("Test!");
+        loggerStream.println();
     }
     
     @Test
     void loggerPrintWriterTest() {
-        PrintWriterLogger writerStream = new PrintWriterLogger(logger);
+        PrintWriterLogger loggerWriter = new PrintWriterLogger(logger);
         
-        writerStream.setLogLevel(Level.INFO);
+        loggerWriter.setLogLevel(Level.INFO);
     
-        writerStream.println("Test 2!");
-        writerStream.print("Test!");
+        loggerWriter.println("Test 2!");
+        loggerWriter.print("Test!");
+        loggerWriter.println();
     }
 }

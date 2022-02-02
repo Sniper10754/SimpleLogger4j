@@ -1,3 +1,5 @@
+package me.sniper10754.simplelogger4j.tests;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.Scanner;

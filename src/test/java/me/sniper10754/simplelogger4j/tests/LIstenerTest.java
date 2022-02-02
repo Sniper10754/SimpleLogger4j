@@ -1,3 +1,5 @@
+package me.sniper10754.simplelogger4j.tests;
+
 import me.sniper10754.simplelogger4j.EventListener;
 import me.sniper10754.simplelogger4j.listeners.FileListener;
 import org.junit.jupiter.api.Test;
