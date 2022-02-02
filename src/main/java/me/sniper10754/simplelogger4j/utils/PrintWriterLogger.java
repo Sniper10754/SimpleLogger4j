@@ -42,7 +42,7 @@ public class PrintWriterLogger extends PrintWriter
      *
      * @return the logger
      */
-    public Logger logger() {
+    public Logger getLogger() {
         return logger;
     }
     
@@ -60,7 +60,7 @@ public class PrintWriterLogger extends PrintWriter
      *
      * @return the level
      */
-    public Level logLevel() {
+    public Level getLogLevel() {
         return logLevel;
     }
     
