@@ -25,6 +25,6 @@ public class StreamListener implements EventListener {
     
     @Override
     public void log(LogEvent event) {
-        stream.println(event.toString());
+        stream.print(event.toString());
     }
 }
