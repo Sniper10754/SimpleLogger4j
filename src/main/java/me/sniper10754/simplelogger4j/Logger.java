@@ -205,6 +205,13 @@ public interface Logger {
         log(Level.ALL, message + (newline ? '\n' : ' '));
     }
     
+    /**
+     * Log.
+     *
+     * @param level   the level
+     * @param message the message
+     * @param newline the newline
+     */
     default void log(Level level, String message, boolean newline) {
         log(new LogEvent(message + (newline ? '\n' : ' '), level, null, this));
     }

@@ -6,6 +6,9 @@ import me.sniper10754.simplelogger4j.event.LogEvent;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+/**
+ * The type Classic formatter.
+ */
 public class ClassicFormatter implements Formatter {
     
     /**
