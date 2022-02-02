@@ -8,7 +8,7 @@ import me.sniper10754.simplelogger4j.Logger;
 
 /**
  * The type Abstract logger.
- *
+ * <p>
  * Provides some implementation for {@link Logger}
  */
 public abstract class AbstractLogger implements Logger {
