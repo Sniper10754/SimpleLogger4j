@@ -1,4 +1,4 @@
-package me.sniper10754.simplelogger4j.utils;
+package me.sniper10754.simplelogger4j;
 
 /**
  * The type Print adapter.

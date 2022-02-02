@@ -2,6 +2,7 @@ package me.sniper10754.simplelogger4j.utils;
 
 import me.sniper10754.simplelogger4j.Level;
 import me.sniper10754.simplelogger4j.Logger;
+import me.sniper10754.simplelogger4j.Printer;
 
 import java.io.PrintWriter;
 import java.io.Writer;
