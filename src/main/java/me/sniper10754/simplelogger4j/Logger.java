@@ -8,6 +8,8 @@ import me.sniper10754.simplelogger4j.event.LogEvent;
 public interface Logger {
     /**
      * Log.
+     * <p>
+     * this method shouldn't worry about log level
      *
      * @param event the event
      */

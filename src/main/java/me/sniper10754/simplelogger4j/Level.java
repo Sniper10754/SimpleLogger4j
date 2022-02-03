@@ -3,37 +3,52 @@ package me.sniper10754.simplelogger4j;
 /**
  * The log Level.
  */
-public enum Level {
+public enum Level implements Comparable<Level> {
     /**
      * Info level.
      */
-    INFO,
+    INFO(0),
     /**
      * Warning level.
      */
-    WARNING,
+    WARNING(2),
     /**
      * Severe level.
      */
-    SEVERE,
+    SEVERE(3),
     /**
      * Config level.
      */
-    CONFIG,
+    CONFIG(1),
     /**
      * Fine level.
      */
-    FINE,
+    FINE(1),
     /**
      * Finer level.
      */
-    FINER,
+    FINER(1),
     /**
      * Finest level.
      */
-    FINEST,
+    FINEST(1),
     /**
      * All level.
      */
-    ALL
+    ALL(1);
+    
+    private int priority;
+    
+    Level(int priority) {
+        this.priority = priority;
+    }
+    
+    /**
+     * Gets priority.
+     *
+     * @return the priority
+     */
+    public int getPriority() {
+        return priority;
+    }
 }
