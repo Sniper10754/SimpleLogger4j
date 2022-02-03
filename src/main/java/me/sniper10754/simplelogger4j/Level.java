@@ -37,7 +37,7 @@ public enum Level implements Comparable<Level> {
      */
     ALL(1);
     
-    private int priority;
+    private final int priority;
     
     Level(int priority) {
         this.priority = priority;

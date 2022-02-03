@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-import java.io.UncheckedIOException;
 
 public class LoggerTest extends AbstractTest {
     @Test
