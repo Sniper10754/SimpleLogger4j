@@ -131,12 +131,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void info(String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(Level.INFO, message);
-    }
+    void info(String message, boolean newline);
     
     /**
      * Warning.
@@ -144,12 +139,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void warning(String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(Level.WARNING, message);
-    }
+    void warning(String message, boolean newline);
     
     /**
      * Severe.
@@ -157,12 +147,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void severe(String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(Level.SEVERE, message);
-    }
+    void severe(String message, boolean newline);
     
     /**
      * Config.
@@ -170,12 +155,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void config(String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(Level.CONFIG, message);
-    }
+    void config(String message, boolean newline);
     
     /**
      * Fine.
@@ -183,12 +163,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void fine(String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(Level.FINE, message);
-    }
+    void fine(String message, boolean newline);
     
     /**
      * Finer.
@@ -196,12 +171,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void finer(String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(Level.FINER, message);
-    }
+    void finer(String message, boolean newline);
     
     /**
      * Finest.
@@ -209,12 +179,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void finest(String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(Level.FINEST, message);
-    }
+    void finest(String message, boolean newline);
     
     /**
      * All.
@@ -222,12 +187,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void all(String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(Level.ALL, message);
-    }
+    void all(String message, boolean newline);
     
     /**
      * Log.
@@ -236,12 +196,7 @@ public interface Logger {
      * @param message the message
      * @param newline the newline
      */
-    default void log(Level level, String message, boolean newline) {
-        if (newline)
-            message = message + "\n";
-        
-        log(new LogEvent(message, level, null, this));
-    }
+    void log(Level level, String message, boolean newline);
     
     /**
      * Gets formatter.
@@ -263,6 +218,22 @@ public interface Logger {
      * @return the logger name
      */
     String getLoggerName();
+    
+    
+    /**
+     * Sets log level.
+     *
+     * @param logLevel the log level
+     */
+    void setLogLevel(Level logLevel);
+    
+    
+    /**
+     * Gets log level.
+     *
+     * @return the log level
+     */
+    Level getLogLevel();
     
     /**
      * Add a event listener.
