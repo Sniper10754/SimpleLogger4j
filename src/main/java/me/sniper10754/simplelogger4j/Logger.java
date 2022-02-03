@@ -132,7 +132,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void info(String message, boolean newline) {
-        log(Level.INFO, message + (newline ? '\n' : ' '));
+        if (newline)
+            message = message + "\n";
+        
+        log(Level.INFO, message);
     }
     
     /**
@@ -142,7 +145,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void warning(String message, boolean newline) {
-        log(Level.WARNING, message + (newline ? '\n' : ' '));
+        if (newline)
+            message = message + "\n";
+        
+        log(Level.WARNING, message);
     }
     
     /**
@@ -152,7 +158,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void severe(String message, boolean newline) {
-        log(Level.SEVERE, message + (newline ? '\n' : ' '));
+        if (newline)
+            message = message + "\n";
+        
+        log(Level.SEVERE, message);
     }
     
     /**
@@ -162,7 +171,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void config(String message, boolean newline) {
-        log(Level.CONFIG, message + (newline ? '\n' : ' '));
+        if (newline)
+            message = message + "\n";
+        
+        log(Level.CONFIG, message);
     }
     
     /**
@@ -172,7 +184,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void fine(String message, boolean newline) {
-        log(Level.FINE, message + (newline ? '\n' : ' '));
+        if (newline)
+            message = message + "\n";
+        
+        log(Level.FINE, message);
     }
     
     /**
@@ -182,7 +197,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void finer(String message, boolean newline) {
-        log(Level.FINER, message + (newline ? '\n' : ' '));
+        if (newline)
+            message = message + "\n";
+        
+        log(Level.FINER, message);
     }
     
     /**
@@ -192,7 +210,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void finest(String message, boolean newline) {
-        log(Level.FINEST, message + (newline ? '\n' : ' '));
+        if (newline)
+            message = message + "\n";
+        
+        log(Level.FINEST, message);
     }
     
     /**
@@ -202,7 +223,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void all(String message, boolean newline) {
-        log(Level.ALL, message + (newline ? '\n' : ' '));
+        if (newline)
+            message = message + "\n";
+        
+        log(Level.ALL, message);
     }
     
     /**
@@ -213,7 +237,10 @@ public interface Logger {
      * @param newline the newline
      */
     default void log(Level level, String message, boolean newline) {
-        log(new LogEvent(message + (newline ? '\n' : ' '), level, null, this));
+        if (newline)
+            message = message + "\n";
+        
+        log(new LogEvent(message, level, null, this));
     }
     
     /**

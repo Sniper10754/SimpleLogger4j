@@ -73,7 +73,7 @@ public class PrintWriterLogger extends PrintWriter implements Printer {
     }
     
     private void log(String s, boolean newline) {
-        logger.log(logLevel, s + (newline ? '\n' : ' '));
+        logger.log(logLevel, s, newline);
     }
     
     @Override

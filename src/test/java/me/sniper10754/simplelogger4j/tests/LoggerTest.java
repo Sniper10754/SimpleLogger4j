@@ -37,7 +37,7 @@ public class LoggerTest extends AbstractTest {
     
     @Test
     void readPromptCorrectly() {
-        logger.info("Select Something:", false);
+        logger.info("Type Something: ", false);
     
         Scanner scanner = new Scanner(System.in);
         

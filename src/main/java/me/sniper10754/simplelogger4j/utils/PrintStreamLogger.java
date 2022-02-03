@@ -69,7 +69,7 @@ public class PrintStreamLogger extends PrintStream implements Printer {
      * @param s the s
      */
     private void log(String s, boolean newline) {
-        logger.log(logLevel, s + (newline ? '\n' : ' '));
+        logger.log(logLevel, s, newline);
     }
     
     @Override
