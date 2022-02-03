@@ -221,22 +221,6 @@ public interface Logger {
      */
     String getLoggerName();
     
-    
-    /**
-     * Sets log level.
-     *
-     * @param logLevel the log level
-     */
-    void setLogLevel(Level logLevel);
-    
-    
-    /**
-     * Gets log level.
-     *
-     * @return the log level
-     */
-    Level getLogLevel();
-    
     /**
      * Add a event listener.
      *

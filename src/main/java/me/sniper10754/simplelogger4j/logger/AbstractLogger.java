@@ -140,18 +140,7 @@ public abstract class AbstractLogger implements Logger {
     public void log(Level level, String message, boolean newline) {
         if (newline) message = message + "\n";
         
-        if (level.getPriority() <= getLogLevel().getPriority())
-            log(new LogEvent(message, level, null, this));
-    }
-    
-    @Override
-    public void setLogLevel(Level logLevel) {
-        this.level = logLevel;
-    }
-    
-    @Override
-    public Level getLogLevel() {
-        return level;
+        log(new LogEvent(message, level, null, this));
     }
     
     /**
