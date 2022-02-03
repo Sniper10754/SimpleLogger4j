@@ -31,9 +31,4 @@ publishing {
             from(components["java"])
         }
     }
-
-}
-
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
 }
