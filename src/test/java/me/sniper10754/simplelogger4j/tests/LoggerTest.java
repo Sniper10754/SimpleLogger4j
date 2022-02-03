@@ -1,46 +1,42 @@
 package me.sniper10754.simplelogger4j.tests;
 
+import me.sniper10754.simplelogger4j.event.LogEvent;
+import me.sniper10754.simplelogger4j.utils.PrintStreamLogger;
 import org.junit.jupiter.api.Test;
 
-import java.util.Scanner;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.io.UncheckedIOException;
 
 public class LoggerTest extends AbstractTest {
-
     @Test
-    void anonymousLoggerTest() {
-        logger.info("Test message :)");
-        logger.warning("Your ice-cream is melting :(");
-        logger.severe("Your ice-cream melted :(");
-        
-        logger.thrown(new IceCreamException("Oh no your ice-cream melted on your hands!"));
+    void simpleLogger() {
+        logger.info("Hello!");
     }
     
     @Test
-    void onSomeFailureOperation() {
-        logger.info("Doing some operations...");
+    void ohNoAnExeption() {
+        Exception exception = new IceCreamException("Your ice cream melted");
         
-        try {
-            int result;
-            
-            logger.info("Trying to divide 4 with 2...");
-            result = 4 / 2;
-            logger.info("Done! result: " + result);
-            
-            logger.info("Trying to divide 2 with 0...");
-            result = 2 / 0;
-            logger.info("Done! result: " + result + " wait why this statement did get executed?");
-            
-        } catch (ArithmeticException e) {
-            logger.thrown("Oh no", e);
-        }
+        logger.thrown(exception);
     }
     
     @Test
-    void readPromptCorrectly() {
-        logger.info("Type Something: ", false);
+    void modifyFormatter() {
+        logger.setFormatter(LogEvent::getMessage);
     
-        Scanner scanner = new Scanner(System.in);
+        logger.info("Test!");
+    }
+    
+    @Test
+    void controlSystemOut() {
+        PrintStreamLogger psLogger = new PrintStreamLogger(logger);
         
-        scanner.nextLine();
+        System.setOut(psLogger);
+    
+        System.out.println("Hi!");
+        
+        System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
     }
 }
