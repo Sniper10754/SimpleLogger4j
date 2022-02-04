@@ -5,46 +5,34 @@ import me.sniper10754.simplelogger4j.event.LogEvent;
 /**
  * The type Simple logger.
  * <p>
- * A simple implementation for {@link EventLogger}
+ * A simple implementation for {@link AbstractLogger}
  */
-public class SimpleLogger extends EventLogger {
-    /**
-     * Log.
-     *
-     * @param event the event
-     */
-    private String name;
+public class SimpleLogger extends AbstractLogger {
     
     /**
-     * Instantiates a new Named logger.
+     * Gets caller class name.
      *
-     * @param name the name
+     * @return the caller class name
+     * @throws ClassNotFoundException the class not found exception
      */
-    public SimpleLogger(String name) {
-        this.name = name;
+    public static Class<?> getCallerClassName() throws ClassNotFoundException {
+        StackTraceElement[] stElements = Thread.currentThread().getStackTrace();
+        
+        return Class.forName(stElements[2].getClassName());
     }
     
     /**
-     * Gets name.
+     * Instantiates a new Simple logger.
      *
-     * @return the name
+     * @throws ClassNotFoundException the class not found exception
      */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
-    public void setName(String name) {
-        this.name = name;
+    public SimpleLogger() throws ClassNotFoundException {
+        super();
     }
     
     @Override
     public String getLoggerName() {
-        return name;
+        return this.boundClass.getSimpleName();
     }
     
     @Override

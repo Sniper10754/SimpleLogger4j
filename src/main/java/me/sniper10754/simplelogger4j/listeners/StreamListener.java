@@ -23,6 +23,10 @@ public class StreamListener implements EventListener {
         this.stream = new PrintStream(stream);
     }
     
+    public PrintStream getStream() {
+        return stream;
+    }
+    
     @Override
     public void log(LogEvent event) {
         stream.print(event.toString());

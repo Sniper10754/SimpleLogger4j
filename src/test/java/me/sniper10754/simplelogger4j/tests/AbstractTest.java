@@ -12,8 +12,8 @@ public abstract class AbstractTest {
     protected Logger logger;
     
     @BeforeEach
-    void beforeEach() {
-        logger = new SimpleLogger(this.getClass().getSimpleName());
+    void beforeEach() throws ClassNotFoundException {
+        logger = new SimpleLogger();
         
         logger.addListener(new ConsoleListener());
     }

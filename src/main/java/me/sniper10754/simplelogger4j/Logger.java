@@ -221,6 +221,14 @@ public interface Logger {
      */
     String getLoggerName();
     
+    
+    /**
+     * Gets bound class.
+     *
+     * @return the bound class
+     */
+    Class<?> getBoundClass();
+    
     /**
      * Add a event listener.
      *
