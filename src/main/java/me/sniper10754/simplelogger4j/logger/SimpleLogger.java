@@ -10,18 +10,6 @@ import me.sniper10754.simplelogger4j.event.LogEvent;
 public class SimpleLogger extends AbstractLogger {
     
     /**
-     * Gets caller class name.
-     *
-     * @return the caller class name
-     * @throws ClassNotFoundException the class not found exception
-     */
-    public static Class<?> getCallerClassName() throws ClassNotFoundException {
-        StackTraceElement[] stElements = Thread.currentThread().getStackTrace();
-        
-        return Class.forName(stElements[2].getClassName());
-    }
-    
-    /**
      * Instantiates a new Simple logger.
      *
      * @throws ClassNotFoundException the class not found exception
