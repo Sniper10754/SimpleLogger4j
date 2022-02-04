@@ -30,6 +30,10 @@ public class SimpleLogger extends AbstractLogger {
         super();
     }
     
+    public SimpleLogger(Class<?> boundClass) {
+        super(boundClass);
+    }
+    
     @Override
     public String getLoggerName() {
         return this.boundClass.getSimpleName();
