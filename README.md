@@ -35,7 +35,7 @@ allprojects {
 }
 ```
 
-2:
+2: Add the dependency
 ```kotlin
 dependencies {
   implementation("com.github.Sniper10754:SimpleLogger4j:Tag")
