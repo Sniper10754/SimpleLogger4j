@@ -2,6 +2,7 @@ package me.sniper10754.simplelogger4j.tests;
 
 import me.sniper10754.simplelogger4j.Formatter;
 import me.sniper10754.simplelogger4j.Logger;
+import me.sniper10754.simplelogger4j.LoggerFactory;
 import me.sniper10754.simplelogger4j.event.LogEvent;
 import me.sniper10754.simplelogger4j.listeners.ConsoleListener;
 import me.sniper10754.simplelogger4j.logger.SimpleLogger;
@@ -13,7 +14,7 @@ public abstract class AbstractTest {
     
     @BeforeEach
     void beforeEach() throws ClassNotFoundException {
-        logger = new SimpleLogger();
+        logger = LoggerFactory.getLogger(getClass());
         
         logger.addListener(new ConsoleListener());
     }
