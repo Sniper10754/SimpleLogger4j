@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.io.Writer;
 
 public class WriterListener implements EventListener {
-    private PrintWriter writer;
+    private final PrintWriter writer;
     
     public WriterListener(Writer writer) {
         this.writer = new PrintWriter(writer);

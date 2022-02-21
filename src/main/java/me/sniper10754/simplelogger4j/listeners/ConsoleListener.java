@@ -14,7 +14,7 @@ public class ConsoleListener extends StreamListener {
     /**
      * Instantiates a new Console listener.
      */
-    enum Kind {
+    public enum Kind {
         /**
          * Err kind.
          */
@@ -38,10 +38,9 @@ public class ConsoleListener extends StreamListener {
      * @param kind the kind
      */
     public ConsoleListener(Kind kind) {
-        this((kind == Kind.OUT) ? System.out :
-             (kind == Kind.ERR) ? System.err : null);
+        this((kind == Kind.OUT) ? System.out : (kind == Kind.ERR) ? System.err : null);
     }
-
+    
     private ConsoleListener(OutputStream stream) {
         super(stream);
     }
