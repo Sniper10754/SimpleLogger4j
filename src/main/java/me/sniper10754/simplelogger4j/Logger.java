@@ -2,6 +2,8 @@ package me.sniper10754.simplelogger4j;
 
 import me.sniper10754.simplelogger4j.event.LogEvent;
 
+import java.util.List;
+
 /**
  * The Logger interface.
  */
@@ -221,14 +223,6 @@ public interface Logger {
      */
     String getLoggerName();
     
-    
-    /**
-     * Gets bound class.
-     *
-     * @return the bound class
-     */
-    Class<?> getBoundClass();
-    
     /**
      * Add a event listener.
      *
@@ -243,4 +237,12 @@ public interface Logger {
      * @return the boolean
      */
     boolean removeListener(EventListener listener);
+    
+    
+    /**
+     * Gets listeners.
+     *
+     * @return the listeners
+     */
+    List<EventListener> getListeners();
 }
