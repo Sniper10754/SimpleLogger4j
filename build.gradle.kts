@@ -13,6 +13,7 @@ repositories {
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:+")
     testImplementation("org.junit.jupiter:junit-jupiter-api:+")
+    implementation("org.fusesource.jansi:jansi:+")
 }
 
 tasks.compileJava {

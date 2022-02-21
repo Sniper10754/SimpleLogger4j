@@ -185,6 +185,6 @@ public abstract class AbstractClassBoundLogger<T> extends AbstractLogger impleme
     
     @Override
     public String getLoggerName() {
-        return getClass().getSimpleName();
+        return boundClass.getName();
     }
 }

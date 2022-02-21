@@ -2,6 +2,7 @@ package me.sniper10754.simplelogger4j.tests;
 
 import me.sniper10754.simplelogger4j.Logger;
 import me.sniper10754.simplelogger4j.event.LogEvent;
+import me.sniper10754.simplelogger4j.formatter.ColoredFormatter;
 import me.sniper10754.simplelogger4j.listeners.ConsoleListener;
 import me.sniper10754.simplelogger4j.loggerfactory.LoggerFactory;
 import me.sniper10754.simplelogger4j.utils.PrintStreamLogger;
@@ -42,7 +43,7 @@ public class LoggerTest {
     
     @Test
     void modifyFormatter() {
-        logger.setFormatter(LogEvent::getMessage);
+        logger.setFormatter(new ColoredFormatter());
     
         logger.info("Test!");
     }

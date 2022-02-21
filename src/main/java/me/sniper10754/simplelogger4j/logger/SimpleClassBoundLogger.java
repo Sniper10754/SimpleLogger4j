@@ -14,11 +14,6 @@ public class SimpleClassBoundLogger<T> extends AbstractClassBoundLogger<T> {
     }
     
     @Override
-    public String getLoggerName() {
-        return super.boundClass.getSimpleName();
-    }
-    
-    @Override
     public void log(LogEvent event) {
         getListeners().forEach(listener -> listener.log(event));
     }
