@@ -11,8 +11,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:+")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:+")
 }
 
 tasks.compileJava {
