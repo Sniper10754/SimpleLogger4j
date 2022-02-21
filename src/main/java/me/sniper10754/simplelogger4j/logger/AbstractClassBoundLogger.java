@@ -1,27 +1,46 @@
 package me.sniper10754.simplelogger4j.logger;
 
-import me.sniper10754.simplelogger4j.EventListener;
-import me.sniper10754.simplelogger4j.Formatter;
-import me.sniper10754.simplelogger4j.Level;
-import me.sniper10754.simplelogger4j.Logger;
+import me.sniper10754.simplelogger4j.*;
 import me.sniper10754.simplelogger4j.event.LogEvent;
+import me.sniper10754.simplelogger4j.formatter.ClassicFormatter;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
-public abstract class AbstractLogger implements Logger {
-    private final List<EventListener> listeners = new ArrayList<>();
+/**
+ * The type Abstract logger.
+ * <p>
+ * Provides some implementation for {@link Logger}
+ */
+public abstract class AbstractClassBoundLogger<T> extends AbstractLogger implements ClassBoundLogger<T> {
+    private final List<EventListener> listeners = new LinkedList<>();
     private Formatter formatter;
+    protected Class<T> boundClass;
     
-    private String getNLOnCondition(String msg, boolean nl) {
-        if (nl) msg = msg + "\n";
-        
-        return msg;
+    /**
+     * Instantiates a new Abstract logger.
+     *
+     * @param boundClass the bound class
+     */
+    public AbstractClassBoundLogger(Class<T> boundClass) {
+        this(new ClassicFormatter(), boundClass);
+    }
+    
+    /**
+     * Instantiates a new Abstract logger.
+     *
+     * @param formatter  the formatter
+     * @param boundClass the bound class
+     */
+    public AbstractClassBoundLogger(Formatter formatter, Class<T> boundClass) {
+        this.formatter = formatter;
+        this.boundClass = boundClass;
     }
     
     @Override
     public void info(String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(Level.INFO, message);
     }
@@ -34,7 +53,7 @@ public abstract class AbstractLogger implements Logger {
      */
     @Override
     public void warning(String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(Level.WARNING, message);
     }
@@ -47,7 +66,7 @@ public abstract class AbstractLogger implements Logger {
      */
     @Override
     public void severe(String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(Level.SEVERE, message);
     }
@@ -60,7 +79,7 @@ public abstract class AbstractLogger implements Logger {
      */
     @Override
     public void config(String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(Level.CONFIG, message);
     }
@@ -73,7 +92,7 @@ public abstract class AbstractLogger implements Logger {
      */
     @Override
     public void fine(String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(Level.FINE, message);
     }
@@ -86,7 +105,7 @@ public abstract class AbstractLogger implements Logger {
      */
     @Override
     public void finer(String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(Level.FINER, message);
     }
@@ -99,7 +118,7 @@ public abstract class AbstractLogger implements Logger {
      */
     @Override
     public void finest(String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(Level.FINEST, message);
     }
@@ -112,7 +131,7 @@ public abstract class AbstractLogger implements Logger {
      */
     @Override
     public void all(String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(Level.ALL, message);
     }
@@ -126,33 +145,46 @@ public abstract class AbstractLogger implements Logger {
      */
     @Override
     public void log(Level level, String message, boolean newline) {
-        message = getNLOnCondition(message, newline);
+        if (newline) message = message + "\n";
         
         log(new LogEvent(message, level, null, this));
     }
     
-    @Override
+    /**
+     * Gets formatter.
+     *
+     * @return the formatter
+     */
     public Formatter getFormatter() {
         return formatter;
     }
     
-    @Override
+    /**
+     * Sets formatter.
+     *
+     * @param formatter the formatter
+     */
     public void setFormatter(Formatter formatter) {
         this.formatter = formatter;
     }
     
     @Override
-    public void addListener(EventListener listener) {
-        listeners.add(listener);
+    public Class<T> getBoundClass() {
+        return boundClass;
     }
     
     @Override
-    public boolean removeListener(EventListener listener) {
-        return listeners.remove(listener);
+    public void thrown(Throwable e) {
+        thrown("Exception/Error occurred", e);
     }
     
     @Override
-    public List<EventListener> getListeners() {
-        return listeners;
+    public void thrown(String prefix, Throwable e) {
+        log(new LogEvent(prefix, Level.SEVERE, e, this));
+    }
+    
+    @Override
+    public String getLoggerName() {
+        return getClass().getSimpleName();
     }
 }
