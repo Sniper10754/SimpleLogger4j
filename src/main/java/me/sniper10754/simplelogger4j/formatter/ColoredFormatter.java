@@ -8,7 +8,7 @@ import org.fusesource.jansi.Ansi;
 import static org.fusesource.jansi.Ansi.Color.*;
 
 public class ColoredFormatter implements Formatter {
-    private Ansi ansi = Ansi.ansi();
+    private Ansi ansi;
     
     public static Ansi.Color corrispondentColor(Level level) {
         switch (level) {
@@ -31,6 +31,8 @@ public class ColoredFormatter implements Formatter {
     
     @Override
     public String format(LogEvent event) {
+        ansi = new Ansi();
+        
         return ansi.fg(corrispondentColor(event.getLevel())).toString() + event.getLevel() + ansi.reset() + " [" + event.getLogger().getLoggerName() + "]: " + event.getMessage();
     }
 }
