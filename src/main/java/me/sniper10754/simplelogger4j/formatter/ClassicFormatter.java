@@ -2,9 +2,7 @@ package me.sniper10754.simplelogger4j.formatter;
 
 import me.sniper10754.simplelogger4j.Formatter;
 import me.sniper10754.simplelogger4j.event.LogEvent;
-
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import me.sniper10754.simplelogger4j.utils.Utils;
 
 /**
  * The type Classic formatter.
@@ -32,14 +30,10 @@ public class ClassicFormatter implements Formatter {
         
         Throwable e;
         if ((e = event.getThrowable()) != null) {
-            StringWriter sw = new StringWriter();
-            e.printStackTrace(new PrintWriter(sw));
-            String exceptionAsString = sw.toString();
             
             if (message != null) if (! message.isEmpty()) buffer.append(": ");
             
-            
-            buffer.append(exceptionAsString);
+            buffer.append(Utils.throwableToString(e));
         }
         
         return buffer.toString();

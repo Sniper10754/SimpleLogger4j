@@ -11,8 +11,7 @@ public class AnonymousLogger extends AbstractLogger {
     
     @Override
     public void log(LogEvent event) {
-        getListeners()
-                .forEach(listener -> listener.log(event));
+        getListeners().forEach(listener -> listener.log(event));
     }
     
     @Override
