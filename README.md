@@ -47,16 +47,14 @@ dependencies {
 Using the logger
 ```java
 
-Logger logger = new SimpleLogger("loggerName");
-
-logger.addListener(new ConsoleListener());
+Logger logger = LoggerFactory.getLogger("MyLogger");
 
 logger.info("Hi!");
 
 ```
 Making System.out use a specific logger
 ```java
-Logger logger = new SimpleLogger("logger")
+Logger logger = LoggerFactory.getLogger("MyLogger");
 
 PrintStreamLogger psLogger = new PrintStreamLogger(logger)
 
