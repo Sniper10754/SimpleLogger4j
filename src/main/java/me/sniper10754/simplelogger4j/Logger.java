@@ -46,9 +46,19 @@ public interface Logger {
      * @param e      the e
      */
     default void thrown(String prefix, Throwable e) {
-        log(new LogEvent(prefix, Level.SEVERE, e, this));
+        thrown(prefix, e, Level.Severe);
     }
     
+    /**
+     * Thrown.
+     *
+     * @param prefix   the prefix
+     * @param e        the e
+     * @param logLevel the log level
+     */
+    default void thrown(String prefix, Throwable e, Level logLevel) {
+        log(new LogEvent(prefix, logLevel, e, this));
+    }
     
     /**
      * Info.

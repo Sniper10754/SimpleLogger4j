@@ -12,7 +12,7 @@ import java.io.PrintStream;
  */
 public class PrintStreamLogger extends PrintStream implements Printer {
     private Logger logger;
-    private Level logLevel = Level.INFO;
+    private Level logLevel = Level.Info;
     
     /**
      * Instantiates a new Print stream adapter.

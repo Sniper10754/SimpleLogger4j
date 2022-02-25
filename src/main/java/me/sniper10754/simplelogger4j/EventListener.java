@@ -6,7 +6,7 @@ import me.sniper10754.simplelogger4j.event.LogEvent;
  * The type Log event listener.
  */
 @FunctionalInterface
-public interface EventListener {
+public interface EventListener extends java.util.EventListener {
     
     /**
      * On log event.

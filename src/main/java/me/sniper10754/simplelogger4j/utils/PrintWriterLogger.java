@@ -12,7 +12,7 @@ import java.io.Writer;
  */
 public class PrintWriterLogger extends PrintWriter implements Printer {
     private Logger logger;
-    private Level logLevel = Level.INFO;
+    private Level logLevel = Level.Info;
     
     /**
      * Instantiates a new Print writer adapter.

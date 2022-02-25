@@ -20,10 +20,16 @@ public abstract class AbstractLogger implements Logger {
     }
     
     @Override
+    public void log(Level level, String message) {
+        log(new LogEvent(message, level, null, this));
+
+    }
+    
+    @Override
     public void info(String message, boolean newline) {
         message = getNLOnCondition(message, newline);
         
-        log(Level.INFO, message);
+        log(Level.Info, message);
     }
     
     /**
@@ -36,7 +42,7 @@ public abstract class AbstractLogger implements Logger {
     public void warning(String message, boolean newline) {
         message = getNLOnCondition(message, newline);
         
-        log(Level.WARNING, message);
+        log(Level.Warning, message);
     }
     
     /**
@@ -49,7 +55,7 @@ public abstract class AbstractLogger implements Logger {
     public void severe(String message, boolean newline) {
         message = getNLOnCondition(message, newline);
         
-        log(Level.SEVERE, message);
+        log(Level.Severe, message);
     }
     
     /**
@@ -62,7 +68,7 @@ public abstract class AbstractLogger implements Logger {
     public void config(String message, boolean newline) {
         message = getNLOnCondition(message, newline);
         
-        log(Level.CONFIG, message);
+        log(Level.Config, message);
     }
     
     /**
@@ -75,7 +81,7 @@ public abstract class AbstractLogger implements Logger {
     public void fine(String message, boolean newline) {
         message = getNLOnCondition(message, newline);
         
-        log(Level.FINE, message);
+        log(Level.Fine, message);
     }
     
     /**
@@ -88,7 +94,7 @@ public abstract class AbstractLogger implements Logger {
     public void finer(String message, boolean newline) {
         message = getNLOnCondition(message, newline);
         
-        log(Level.FINER, message);
+        log(Level.Finer, message);
     }
     
     /**
@@ -101,7 +107,7 @@ public abstract class AbstractLogger implements Logger {
     public void finest(String message, boolean newline) {
         message = getNLOnCondition(message, newline);
         
-        log(Level.FINEST, message);
+        log(Level.Finest, message);
     }
     
     /**
@@ -114,7 +120,7 @@ public abstract class AbstractLogger implements Logger {
     public void all(String message, boolean newline) {
         message = getNLOnCondition(message, newline);
         
-        log(Level.ALL, message);
+        log(Level.All, message);
     }
     
     /**
